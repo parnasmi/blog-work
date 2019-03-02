@@ -1,0 +1,56 @@
+.intro-content {
+	
+}
+
+.intro-content__text {
+	font-weight: 300;
+	font-size: 30px;
+	line-height: 1.2;
+	color: #444444;
+	margin-bottom: 45px;
+	strong {
+		font-weight: 700;
+	}
+	
+	@include respond(tabonly) {
+		font-size: 20px;
+		padding: 0 30px;
+		margin-bottom: 20px;
+	}
+	
+	@include respond(phone) {
+		font-size: 15px;
+		margin-bottom: 5px;
+		background-color: rgba(#fff, .7);
+		padding: 5px;
+	}
+}
+
+.intro-content__btn {
+	display: inline-block;
+	line-height: 1;
+	font-weight: 300;
+	color: #444;
+	border-radius: 50px;
+	font-size: 25px;
+	background-color: #fff;
+	padding: 7px 20px;
+	transition: all .3s;
+	
+	&:hover {
+		color: darken($accent, 10%);
+	}
+	
+	&:focus {
+		color: #444444;
+	}
+	
+	@include respond(tabonly) {
+		font-size: 15px;
+		padding: 5px 15px;
+	}
+	@include respond(phone) {
+		font-size: 12px;
+		padding: 5px 10px;
+	}
+}

@@ -1,0 +1,219 @@
+<app-header></app-header>
+
+<div class="breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-text-center d-align-center">
+        <h2 class="title" i18n="Title">
+          <span>{{ 'our_services' | translate }}</span>
+        </h2>
+      </div>
+      <div class="col-md-6 col-sm-6 col-text-center">
+        <nav aria-label="breadcrumb" class="blog-bradcrumb">
+          <ol class="breadcrumb bg-transparent mb-0">
+            <li class="breadcrumb-item">
+              <a [routerLink]="'/home/one'">{{ 'home' | translate }}</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- blog Section Start -->
+
+<section id="blog" class="blog">
+  <div class="about-decor">
+    <div class="about-circle1">
+      <img src="assets/images/team1.png" alt="" />
+    </div>
+    <div class="about-circle2">
+      <img src="assets/images/main-banner1.png" alt="" />
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12" style="text-align: center">
+        <h2 class="title" i18n="product list title">
+          {{ 'our_services' | translate }}
+        </h2>
+      </div>
+
+      <div
+        class="col-xl-4 col-md-6 col-sm-12"
+        *ngFor="let service of inputServices"
+      >
+        <mat-card class="service-card">
+          <!--<a onclick="show_question(this)">-->
+          <img
+            mat-card-image
+            src="http://onlinekurzyaskoleni.cz/uploads/docs/{{ service.img }}"
+            alt="Photo of a service"
+            height="250px"
+            i18n-title
+            title="the localized title of the image"
+          />
+          <!--</a>-->
+          <mat-card-content text-align="center">
+            <p>{{ service.name }}</p>
+            <p>{{ service.short_text }}</p>
+          </mat-card-content>
+          <!--<div class="col-12 text-center">-->
+          <div class="text-center">
+            <button
+              [routerLink]="['/single-service-page', service.id]"
+              mdbBtn
+              type="button"
+              class="btn btn-outline-warning"
+              mdbWavesEffect
+              rounded="true"
+              i18n="service-info button"
+            >
+              {{ 'detail' | translate }}
+            </button>
+            <button
+              type="button"
+              mdbBtn
+              class="btn btn-outline-primary"
+              rounded="true"
+              data-toggle="modal"
+              data-target="#basicExample"
+              (click)="frame.show()"
+              mdbWavesEffect
+              margin-top="0"
+            >
+              {{ 'write_us' | translate }}
+            </button>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal window -->
+<div
+  mdbModal
+  #frame="mdbModal"
+  class="modal fade left"
+  id="frameModalTop"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+  [config]="{ backdrop: true, ignoreBackdropClick: true }"
+>
+  <div class="modal-dialog" role="document">
+    <form [formGroup]="sendServiceForm" (ngSubmit)="onSubmit()">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">
+            {{ 'write_us' | translate }}
+          </h4>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+            (click)="hideModalForm()"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+            <i class="fa fa-user prefix grey-text"></i>
+            <input
+              type="text"
+              id="form34"
+              class="form-control validate"
+              mdbInputDirective
+              formControlName="contactFormModalName"
+              aria-describedby="emailHelp"
+              placeholder="Enter name"
+              i18n
+            />
+            <!-- <label data-error="wrong" data-success="right" for="form34"></label> -->
+          </div>
+
+          <div class="md-form mb-5">
+            <i class="fa fa-envelope prefix grey-text"></i>
+            <input
+              type="email"
+              id="form29"
+              class="form-control validate"
+              mdbInputDirective
+              formControlName="contactFormModalEmail"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              required
+              i18n
+            />
+            <!-- <label data-error="wrong" data-success="right" for="form29"></label> -->
+          </div>
+
+          <div class="md-form mb-5">
+            <i class="fa fa-phone prefix grey-text"></i>
+            <input
+              type="text"
+              id="form32"
+              class="form-control validate"
+              mdbInputDirective
+              formControlName="contactFormModalSubject"
+              aria-describedby="emailHelp"
+              placeholder="Enter telephone number"
+              required
+              i18n
+            />
+            <!-- <label data-error="wrong" data-success="right" for="form32"></label> -->
+          </div>
+          <p></p>
+          <div class="md-form">
+            <i class="fa fa-pencil prefix grey-text"></i>
+            <textarea
+              type="text"
+              id="form8"
+              class="md-textarea form-control"
+              rows="1"
+              mdbInputDirective
+              formControlName="contactFormModalMessage"
+              aria-describedby="emailHelp"
+              placeholder="Comment"
+              i18n
+            ></textarea>
+            <!-- <label data-error="wrong" data-success="right" for="form8"></label> -->
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <ng-container *ngIf="!dataFromModalSent; else thanksEl">
+            <button
+              type="submit"
+              mdbBtn
+              color="unique"
+              class="waves-light"
+              mdbWavesEffect
+              [disabled]="!sendServiceForm.valid"
+            >
+              {{ 'send' | translate }}
+              <i class="fa fa-paper-plane-o ml-1"></i>
+            </button>
+          </ng-container>
+          <!-- <ng-template #thanksEl>
+            <div
+              class="alert alert-success"
+              role="alert"
+              id="success-alert"
+              [@itemAnim]
+            >
+            {{'send' | translate}}
+            </div>
+          </ng-template> -->
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Modal window -->
+
+<app-footer></app-footer>

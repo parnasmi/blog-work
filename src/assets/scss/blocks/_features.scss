@@ -1,0 +1,59 @@
+.feature {
+	background-image: url("/assets/images/bl-bg-features-2.png");
+	padding-bottom: 0;
+	
+	@include respond(tabonly) {
+		background-position: -100px 0;
+	}
+	
+	@include respond(phone) {
+		padding-top: 30px;
+		background-position: -300px -30px;
+		background-image: none;
+	}
+}
+
+
+
+.feature .feature-phone {
+	position: static;
+}
+
+.feature .feature-phone img{
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.feature__pic {
+	img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+.feature .title {
+	font-weight: bold;
+	font-size: 3.5rem;
+	line-height: 1;
+	margin-bottom: 40px;
+	
+	@include respond(phone) {
+		font-size: 2.5rem;
+	}
+}
+
+.feature .feature-subtitle h3{
+	font-size: 20px;
+}
+
+.feature .feature-subtitle + div p {
+	font-size: 13px;
+	color: #777777;
+}
+
+.feature-style li {
+	@include respond(phone) {
+		margin-bottom: 20px;
+	}
+}

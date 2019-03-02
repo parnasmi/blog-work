@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="4eaa396a0686e4c364766a65e22dac1e59b9e100" datatype="html">
+        <source>Add to cart</source>
+        <target>Přidat do košíku</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/oneproduct/oneproduct.component.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <note priority="1" from="description">Add button</note>
+      </trans-unit>
+      <trans-unit id="0da57f32138a928f87666fa7d5e238927071f308" datatype="html">
+        <source>latest <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>blog<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target>nejnovější <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>blog<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/list/list.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">product list title</note>
+      </trans-unit>
+      <trans-unit id="78ff71179adcd0441fe2e020546cfeed520c2542" datatype="html">
+        <source>the localized title of the image</source>
+        <target>lokalizovaný název obrázku</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/list/list.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cd78b8567497a2b5ecca0af24373e8935f04de74" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{res.cz_name}}"/><x id="INTERPOLATION_1" equiv-text="{{res.id}}"/></source>
+        <target><x id="INTERPOLATION" equiv-text="{{res.cz_name}}"/><x id="INTERPOLATION_1" equiv-text="{{res.id}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/list/list.component.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description">product list-product name</note>
+      </trans-unit>
+      <trans-unit id="37a7f6ee4b13de486f504a0ed711dcbec62f5c88" datatype="html">
+        <source>View product</source>
+        <target>Zobrazit produkt</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/list/list.component.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="description">product list-view product button</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

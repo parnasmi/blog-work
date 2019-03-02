@@ -1,0 +1,71 @@
+// @import "_mixins/font-face";
+
+
+@font-face {
+    font-family: 'aa_bebas';
+    src: url('../fonts/aa_bebasneue-webfont.woff2') format('woff2'),
+         url('../fonts/aa_bebasneue-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bebas_neue';
+    src: url('../fonts/bebasneue_bold-webfont.woff2') format('woff2'),
+         url('../fonts/bebasneue_bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bebas_neuebook';
+    src: url('../fonts/bebasneue_book-webfont.woff2') format('woff2'),
+         url('../fonts/bebasneue_book-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bebas_neue';
+    src: url('../fonts/bebasneue_light-webfont.woff2') format('woff2'),
+         url('../fonts/bebasneue_light-webfont.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'bebas_neue';
+    src: url('../fonts/bebasneue_regular-webfont.woff2') format('woff2'),
+         url('../fonts/bebasneue_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'bebas_neue_cyrillicregular';
+    src: url('../fonts/bebasneuecyrillic-webfont.woff2') format('woff2'),
+         url('../fonts/bebasneuecyrillic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+		font-family: 'bebas';
+		src: url('../fonts/bebasneuethin-webfont.woff2') format('woff2'),
+				 url('../fonts/bebasneuethin-webfont.woff') format('woff');
+		font-weight: 100;
+		font-style: normal;
+}
+
+// @font-face {
+//     font-family: 'bebas_neuelight';
+//     src: url('../fonts/bebasneuelight-webfont.woff2') format('woff2'),
+//          url('../fonts/bebasneuelight-webfont.woff') format('woff');
+//     font-weight: 300;
+//     font-style: normal;
+
+// }
+

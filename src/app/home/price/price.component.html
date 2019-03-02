@@ -1,0 +1,129 @@
+<!-- Price Section start-->
+<section id="price" class="price">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 social-links">
+        <div class="checkbox flags">
+          <form [formGroup]="flagsForm">
+            <div
+              class="custom-control custom-checkbox"
+              *ngFor="let flag of (flagList | async)"
+            >
+              <input
+                class="custom-control-input"
+                id="{{ flag.name }}"
+                type="checkbox"
+                name="{{ flag.name }}"
+                (change)="onChangeFlags(flag.id, $event.target.checked)"
+              />
+
+              <label class="custom-control-label" for="{{ flag.name }}">
+                <img
+                  src="../../../assets/images/icon/{{ flag.name }}.svg"
+                  alt="{{ flag.name }}"
+                />
+                {{ flag.name }}
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="checkbox">
+          <form [formGroup]="socialLinksForm">
+            <div
+              class="custom-control custom-checkbox"
+              *ngFor="let link of linksList"
+            >
+              <input
+                [checked]="true"
+                class="custom-control-input"
+                id="{{ link.type }}"
+                type="checkbox"
+                name="{{ link.type }}"
+                (change)="onChangeLinks(link.id, $event.target.checked)"
+              />
+
+              <label class="custom-control-label" for="{{ link.type }}">
+                <i class="fa fa-{{ link.type }}" aria-hidden="true"></i>
+                {{ link.type }}
+              </label>
+            </div>
+          </form>
+        </div>
+
+        <div class="checkbox hashtags">
+          <form [formGroup]="hashTagForm">
+            <div
+              class="custom-control custom-checkbox"
+              *ngFor="let htag of (hashtagsList | async)"
+            >
+              <input
+                class="custom-control-input"
+                id="{{ htag.hashtag }}"
+                type="checkbox"
+                name="{{ htag.hashtag }}"
+                (change)="onChangeHashtags(htag.id, $event.target.checked)"
+              />
+
+              <label class="custom-control-label" for="{{ htag.hashtag }}">
+                {{ '#' + htag.hashtag }}
+              </label>
+            </div>
+          </form>
+        </div>
+
+        <div class="checkbox slider">
+          <mat-slider
+            [(ngModel)]="sliderValue"
+            (input)="onInputChange($event)"
+            color="primary"
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            min="1"
+            max="100000"
+            [@valueAnimation]="sliderValue"
+          ></mat-slider>
+          <h3 *ngFor="let sliderValue of [sliderValue]">{{ sliderValue }}</h3>
+        </div>
+        <button class="btn btn-custom theme-color" (click)="sendOptions()">
+          Apply
+        </button>
+      </div>
+
+      <div class="col-sm-12">
+        <!-- If images array is dynamically changing pass this array to [items] input -->
+        <owl-carousel
+          [options]="pricingCarousel"
+          [items]="price"
+          [carouselClasses]="['price-carousel owl-theme']"
+        >
+          <div class="price-item" *ngFor="let prices of price">
+            <div class="price-block">
+              <div class="price-type">
+                <h2>{{ prices.type }}</h2>
+              </div>
+              <div class="mrp">
+                <h6 class="user-type" i18n="price-page title">
+                  {{ prices.title }}
+                </h6>
+                <div class="price-devide"></div>
+                <h2>{{ prices.price }}$</h2>
+                <h6 class="price-year">{{ prices.duration }}</h6>
+                <div class="price-devide"></div>
+              </div>
+              <ul class="price-feature" [innerHTML]="prices.feature"></ul>
+              <a
+                [routerLink]="'/demo'"
+                class="btn btn-custom theme-color"
+                role="button"
+              >
+                Select Plan
+              </a>
+            </div>
+          </div>
+        </owl-carousel>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Price Section End -->

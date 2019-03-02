@@ -1,0 +1,53 @@
+@import "src/assets/scss/service";
+
+.fixed-top {
+  position: initial;
+}
+
+.navbar-nav {
+	@include respond(desktop) {
+		display: inline-block !important;
+	}
+}
+
+.navbar {
+	@include respond(desktop) {
+		position: relative;
+		box-shadow: none;
+		&::before {
+			content: '';
+			position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+			background-image: url("/assets/images/dec-bg-header-oval.png");
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			background-size: 100%;
+		}
+	}
+}
+
+.nav-link {
+	font-size: 25px!important;
+	color: #777777!important;
+	white-space: nowrap;
+}
+
+.nav-item {
+	@include respond(desktop) {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+.nav-item.active .nav-link {
+	color: #f7d302!important;
+}
+
+
+
+
+.flexMenu-popup {
+	outline: 1px solid red;
+}

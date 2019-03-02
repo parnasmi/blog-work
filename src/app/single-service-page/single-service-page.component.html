@@ -1,0 +1,231 @@
+<app-header></app-header>
+<div class="breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-text-center d-align-center">
+        <h2 class="title" i18n="Title">
+          Service
+          <span>Details</span>
+        </h2>
+      </div>
+      <div class="col-md-6 col-sm-6 col-text-center">
+        <nav aria-label="breadcrumb" class="blog-bradcrumb ">
+          <ol class="breadcrumb bg-transparent mb-0">
+            <li class="breadcrumb-item">
+              <a [routerLink]="'/home/one'">Home</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container service-page" *ngIf="serviceLoaded">
+  <div class="row">
+    <div class="col-md-12 col-sm-6 col-text-center d-align-center">
+      <img
+        src="http://onlinekurzyaskoleni.cz/uploads/docs/{{ pageFromDB.img }}"
+        alt=""
+      />
+      <h2>{{ pageFromDB.name }}</h2>
+      <hr />
+      <h3>{{ pageFromDB.short_text }}</h3>
+      <div [innerHTML]="htmlTextToDecode"></div>
+    </div>
+
+    <!-- <div class="col-md-6 col-sm-6 col-text-center d-align-center">
+     
+    </div> -->
+  </div>
+</div>
+
+<div id="generic_price_table" *ngIf="firstServiceBlock">
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <!--PRICE HEADING START-->
+          <div class="price-heading clearfix"><h1>Pricing Table</h1></div>
+          <!--//PRICE HEADING END-->
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <!--BLOCK ROW START-->
+      <div class="row">
+        <div class="col-md-3">
+          <!--PRICE CONTENT START-->
+          <div class="generic_content clearfix">
+            <!--HEAD PRICE DETAIL START-->
+            <div class="generic_head_price clearfix">
+              <!--HEAD CONTENT START-->
+              <div class="generic_head_content clearfix">
+                <!--HEAD START-->
+                <div class="head_bg"></div>
+                <div class="head">
+                  <span>{{ firstServiceBlock.name }}</span>
+                </div>
+                <!--//HEAD END-->
+              </div>
+              <!--//HEAD CONTENT END-->
+
+              <!--PRICE START-->
+              <div class="generic_price_tag clearfix">
+                <span class="price1">
+                  <span class="sign">Kč</span>
+                  <span class="currency">{{ firstServiceBlock.price }}</span>
+                </span>
+              </div>
+              <!--//PRICE END-->
+            </div>
+            <!--//HEAD PRICE DETAIL END-->
+
+            <!--FEATURE LIST START-->
+            <div
+              class="generic_feature_list"
+              [innerHTML]="firstServiceBlock.text"
+            ></div>
+            <!--//FEATURE LIST END-->
+
+            <!--BUTTON START-->
+            <div class="generic_price_btn clearfix">
+              <a class="" href="" i18n>{{ firstServiceBlock.add_text }}</a>
+            </div>
+            <!--//BUTTON END-->
+          </div>
+          <!--//PRICE CONTENT END-->
+        </div>
+
+        <div class="col-md-3">
+          <!--PRICE CONTENT START-->
+          <div class="generic_content active clearfix">
+            <!--HEAD PRICE DETAIL START-->
+            <div class="generic_head_price clearfix">
+              <!--HEAD CONTENT START-->
+              <div class="generic_head_content clearfix">
+                <!--HEAD START-->
+                <div class="head_bg"></div>
+                <div class="head">
+                  <span>{{ secondServiceBlock.name }}</span>
+                </div>
+                <!--//HEAD END-->
+              </div>
+              <!--//HEAD CONTENT END-->
+
+              <!--PRICE START-->
+              <div class="generic_price_tag clearfix">
+                <span class="price1">
+                  <span class="sign">Kč</span>
+                  <span class="currency">{{ secondServiceBlock.price }}</span>
+                </span>
+              </div>
+              <!--//PRICE END-->
+            </div>
+            <!--//HEAD PRICE DETAIL END-->
+
+            <!--FEATURE LIST START-->
+            <div
+              class="generic_feature_list"
+              [innerHTML]="secondServiceBlock.text"
+            ></div>
+            <!--//FEATURE LIST END-->
+
+            <!--BUTTON START-->
+            <div class="generic_price_btn clearfix">
+              <a class="" href="" i18n>{{ secondServiceBlock.add_text }}</a>
+            </div>
+            <!--//BUTTON END-->
+          </div>
+          <!--//PRICE CONTENT END-->
+        </div>
+        <div class="col-md-3">
+          <!--PRICE CONTENT START-->
+          <div class="generic_content clearfix">
+            <!--HEAD PRICE DETAIL START-->
+            <div class="generic_head_price clearfix">
+              <!--HEAD CONTENT START-->
+              <div class="generic_head_content clearfix">
+                <!--HEAD START-->
+                <div class="head_bg"></div>
+                <div class="head">
+                  <span>{{ thirdServiceBlock.name }}</span>
+                </div>
+                <!--//HEAD END-->
+              </div>
+              <!--//HEAD CONTENT END-->
+
+              <!--PRICE START-->
+              <div class="generic_price_tag clearfix">
+                <span class="price1">
+                  <span class="sign">Kč</span>
+                  <span class="currency">{{ thirdServiceBlock.price }}</span>
+                </span>
+              </div>
+              <!--//PRICE END-->
+            </div>
+            <!--//HEAD PRICE DETAIL END-->
+
+            <!--FEATURE LIST START-->
+            <div
+              class="generic_feature_list"
+              [innerHTML]="thirdServiceBlock.text"
+            ></div>
+            <!--//FEATURE LIST END-->
+
+            <!--BUTTON START-->
+            <div class="generic_price_btn clearfix">
+              <a class="" href="" i18n>{{ thirdServiceBlock.add_text }}</a>
+            </div>
+            <!--//BUTTON END-->
+          </div>
+          <!--//PRICE CONTENT END-->
+        </div>
+
+        <div class="col-md-3">
+          <!--PRICE CONTENT START-->
+          <div class="generic_content clearfix">
+            <!--HEAD PRICE DETAIL START-->
+            <div class="generic_head_price clearfix">
+              <!--HEAD CONTENT START-->
+              <div class="generic_head_content clearfix">
+                <!--HEAD START-->
+                <div class="head_bg"></div>
+                <div class="head">
+                  <span>{{ fourthServiceBlock.name }}</span>
+                </div>
+                <!--//HEAD END-->
+              </div>
+              <!--//HEAD CONTENT END-->
+
+              <!--PRICE START-->
+              <div class="generic_price_tag clearfix">
+                <span class="price1">
+                  <span class="sign">Kč</span>
+                  <span class="currency">{{ fourthServiceBlock.price }}</span>
+                </span>
+              </div>
+              <!--//PRICE END-->
+            </div>
+            <!--//HEAD PRICE DETAIL END-->
+
+            <!--FEATURE LIST START-->
+            <div
+              class="generic_feature_list"
+              [innerHTML]="fourthServiceBlock.text"
+            ></div>
+            <!--//FEATURE LIST END-->
+
+            <!--BUTTON START-->
+            <div class="generic_price_btn clearfix">
+              <a class="" href="" i18n>{{ fourthServiceBlock.add_text }}</a>
+            </div>
+            <!--//BUTTON END-->
+          </div>
+          <!--//PRICE CONTENT END-->
+        </div>
+      </div>
+      <!--//BLOCK ROW END-->
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>

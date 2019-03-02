@@ -1,0 +1,46 @@
+.breadcrumb-bg {
+  margin-bottom: 50px;
+}
+
+button {
+  margin-top: 20px;
+}
+
+.error-template {
+  text-align: center;
+}
+
+h3 {
+  color: #000;
+}
+img.mat-card-image {
+  max-height: 200px;
+}
+
+.example-card {
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+a {
+  text-decoration: none;
+}
+.card-footer_ {
+  text-align: center;
+  a {
+    text-decoration: none;
+    margin-left: 15px;
+    color: #000000;
+    &:hover {
+      color: #000000;
+    }
+  }
+  .fa-trash-o {
+    color: red;
+  }
+
+  .fa-eye {
+    color: #18bba7;
+  }
+
+}

@@ -1,0 +1,63 @@
+//Container widths
+$sm-container-width: 728px;
+$smm-container-width: 1024px;
+$md-container-width: 1280px;
+$lg-container-width: 1290px;
+$lg-container-width-sidebar: 1026px;
+$desktop-width: 1366px;
+//Where desktop begins
+$desktop-widths: '(min-width: 1281px)';
+$mobileonly: '(max-width: 767px)';
+// Max width where tablet is still affect finishes
+$mobtabonly: '(max-width: 992px)';
+$tabonly: '(min-width:768px) and (max-width: 1280px)';
+$porttab: '(min-width:768px) and (max-width: 800px)';
+$landtab: '(min-width:1024px) and (max-width: 1280px)';
+$tabdeskonly: '(min-width: 768px)';
+//where desktop begins
+$deskonly: '(min-width: 991.98px)';
+
+@mixin respond($breakpoint) {
+	@if $breakpoint == tablet {
+		// @media (max-width: 1200px) {
+		@media #{$mobtabonly} {
+			@content
+		}
+	}
+
+	@if $breakpoint == phone {
+		@media #{$mobileonly} {
+			@content
+		}
+	}
+	
+	@if $breakpoint == tabonly {
+		@media #{$tabonly} {
+			@content
+		}
+	}
+	
+	@if $breakpoint == porttab {
+		@media #{$porttab} {
+			@content
+		}
+	}
+	
+	@if $breakpoint == landtab {
+		@media #{$landtab} {
+			@content
+		}
+	}
+	
+	@if $breakpoint == tabdesk {
+		@media #{$tabdeskonly} {
+			@content
+		}
+	}
+	
+	@if $breakpoint == desktop {
+		@media #{$deskonly} {
+			@content
+		}
+	}
+}

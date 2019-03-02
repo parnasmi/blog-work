@@ -1,0 +1,100 @@
+<!-- blog Section Start -->
+<app-header></app-header>
+<div class="breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-text-center d-align-center">
+        <h2 class="title" i18n="Title"><span>products</span></h2>
+      </div>
+      <div class="col-md-6 col-sm-6 col-text-center">
+        <nav aria-label="breadcrumb" class="blog-bradcrumb">
+          <ol class="breadcrumb bg-transparent mb-0">
+            <li class="breadcrumb-item">
+              <a [routerLink]="'/home/one'">Home</a>
+            </li>
+            <li class="breadcrumb-item active">
+              <a [routerLink]="'/products/all-products'">All products</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="blog" class="blog">
+  <div class="about-decor">
+    <div class="about-circle1">
+      <img src="assets/images/team1.png" alt="" />
+    </div>
+    <div class="about-circle2">
+      <img src="assets/images/main-banner1.png" alt="" />
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2 class="title" i18n="product list title">
+          latest
+          <span>blog</span>
+        </h2>
+      </div>
+
+      <div
+        class="col-xl-3 col-sm-12"
+        *ngFor="
+          let product of (allProducts
+            | async
+            | paginate: { itemsPerPage: 12, currentPage: firstPage })
+        "
+        [@itemAnim]
+      >
+        <mat-card class="product-card">
+          <img
+            mat-card-image
+            src="http://dekoraceprodomov.cz/uploads/products/prw/{{
+              product.img
+            }}"
+            alt="Photo of a product"
+            height="250px"
+            i18n-title
+            title="the localized title of the image"
+          />
+          <mat-card-content text-align="center">
+            <p>{{ product.cz_name }}{{ product.id }}</p>
+            <h2>{{ product.price }}Kč</h2>
+          </mat-card-content>
+
+          <mat-card-actions align="center">
+            <!-- <button nz-button nzType="default" [routerLink]="['/oneproduct',product.id]">View product</button> -->
+            <div
+              class="btn btn-custom theme-color"
+              [routerLink]="['/oneproduct', product.id]"
+            >
+              View product
+            </div>
+            <!-- <a
+                    mdbBtn href="#"
+                    role="button"
+                    color="Success"
+                    mdbWavesEffect
+                    [routerLink]="['/oneproduct',product.id]"
+                    i18n="product list-view product button"
+            >View product</a> -->
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      <div class="col-sm-12"></div>
+    </div>
+  </div>
+  <div class="row align-items-center justify-content-center">
+    <pagination-controls
+      (pageChange)="firstPage = $event"
+      class="pagination"
+    ></pagination-controls>
+  </div>
+</section>
+<!-- blog Section End -->
+<app-footer></app-footer>
+
+<ng-template #noData>No Data Available</ng-template>

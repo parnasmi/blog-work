@@ -1,0 +1,107 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'assets/scss/service';
+
+
+$bebas: bebas_neue;
+$bebas_aa: aa_bebas;
+$bebas_book: bebas_neuebook;
+$bebas_cyr: bebas_neue_cyrillicregular;
+
+$color-accent: #f7d302;
+$color-text: #777;
+$text: $color-text;
+$accent: $color-accent;
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+	font-family: $bebas, 'Helvetica Neue', sans-serif;
+	color: #777777;
+}
+
+.grey {
+	color: #777777;
+}
+
+#generic_price_table .generic_content .generic_feature_list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#generic_price_table .generic_content .generic_feature_list ul li {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  padding: 7px 0;
+  transition: all 0.3s ease-in-out 0s;
+}
+#generic_price_table .generic_content .generic_feature_list ul li:hover {
+  transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  -ms-transition: all 0.3s ease-in-out 0s;
+  -o-transition: all 0.3s ease-in-out 0s;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+}
+
+#generic_price_table .generic_content .generic_feature_list ul li .fa {
+  padding: 0 10px;
+}
+
+#generic_price_table .generic_content .generic_feature_list ul li {
+  color: #777777;
+}
+
+#generic_price_table .generic_content .generic_feature_list ul li span {
+  color: #414141;
+}
+#generic_price_table .generic_content .generic_feature_list ul li:hover {
+  background-color: #e4e4e4;
+  border-left: 5px solid #2ecc71;
+}
+
+.navbar-light .default-nav .navbar-nav .nav-link {
+  font-size: 12px;
+}
+
+.mat-card {
+}
+
+.service-card {
+  margin-bottom: 30px;
+  min-height: 500px;
+
+  .mat-card {
+    &:hover {
+      /* Grow Shadow */
+      .hvr-grow-shadow {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: box-shadow, transform;
+        transition-property: box-shadow, transform;
+      }
+
+      .hvr-grow-shadow:hover,
+      .hvr-grow-shadow:focus,
+      .hvr-grow-shadow:active {
+        box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@import 'assets/scss/blocks/tovo-header';
+@import 'assets/scss/blocks/intro-carousel';
+@import 'assets/scss/blocks/intro-content';
+@import 'assets/scss/blocks/about';
+@import 'assets/scss/blocks/features';
+@import 'assets/scss/blocks/theme';

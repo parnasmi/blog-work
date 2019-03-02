@@ -1,0 +1,31 @@
+.bloger-caption {
+  position: absolute;
+  top: 0;
+  left: 40%;
+}
+
+.chips {
+  position: absolute;
+  top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  h3 {
+    margin-top: 0;
+    margin-right: 30px;
+  }
+
+  mat-chip {
+    cursor: pointer;
+    box-shadow: -1px 10px 16px -7px #000000d4;
+  }
+
+  mat-form-field {
+    width: 480px;
+  }
+
+  .example-chip-list {
+    width: 60%;
+  }
+}

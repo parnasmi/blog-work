@@ -1,0 +1,78 @@
+<app-header></app-header>
+<!--breadcrumb start-->
+<div class="breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-text-center d-align-center">
+        <h2 class="title" i18n="Title">product<span> Details</span></h2>
+      </div>
+      <div class="col-md-6 col-sm-6 col-text-center">
+        <nav aria-label="breadcrumb" class="blog-bradcrumb ">
+          <ol class="breadcrumb bg-transparent mb-0">
+             <!--<li class="breadcrumb-item"><a [routerLink]="'/home/one'">Home</a></li>-->
+            <!--<li class="breadcrumb-item active"><a [routerLink]="'/oneproduct'">Blog Details</a></li>-->
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--breadcrumb end-->
+<!--as d ass d -->
+
+<div class="container" *ngIf="isLoaded">
+  <div class="card">
+    <div class="container-fliud">
+      <div class="wrapper row">
+        <div class="preview col-md-6">
+
+          <div class="preview-pic tab-content">
+            <!--<div class="tab-pane active" id="pic-1"><img src="http://dekoraceprodomov.cz/uploads/products/prw/{{ product.img }}"></div>-->
+            <!--<ngx-gallery [options]="galleryOptions" [images]="galleryImages" *ngIf="isLoaded"></ngx-gallery>-->
+            <nz-carousel nzAutoPlay>
+              <div nz-carousel-content><img src="http://dekoraceprodomov.cz/uploads/products/prw/{{ product.img }}" width="100%" alt="Product Image"></div>
+              <div nz-carousel-content *ngFor="let image of product.photos"><img src="http://dekoraceprodomov.cz/uploads/products/prw/{{ image.img }}" width="100%" alt="Product Image"></div>
+            </nz-carousel>
+          </div>
+
+
+        </div>
+        <div class="details col-md-6">
+          <h3 class="product-title" i18n="Product name">{{ product.cz_name }}<mdb-badge color="red"> -{{product.discount}}%</mdb-badge></h3>
+          <div class="rating">
+            <nz-rate [ngModel]="4" nzAllowHalf [nzCharacter]="characterIcon"></nz-rate>
+            <ng-template #characterIcon><i nz-icon type="heart"></i></ng-template>
+          </div>
+          <p class="product-description" i18n="Product description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, exercitationem, repellendus. Dolorum eveniet nostrum praesentium repellendus sequi sit. Aut, eveniet.</p>
+
+          <h2 class="price" margin-bottom="50px"><span>{{ product.price }}Kč</span></h2>
+          <div>
+            <nz-select style="width: 200px;" nzAllowClear nzPlaceHolder="Choose" [(ngModel)]="selectedOptionValue">
+              <nz-option *ngFor="let option of productParams"
+                         [nzLabel]="option.parameters_value.value"
+                         [nzValue]="option.parameters_value"
+                         i18n="option name"
+              ></nz-option>
+            </nz-select>
+          </div>
+          <button
+            mdbBtn
+            type="button"
+            color="warning"
+            outline="true"
+            mdbWavesEffect
+            (click)="addToCart(product)"
+            i18n="Add button"
+          >Add to cart</button>
+
+          <div class="action">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng2-toasty></ng2-toasty>
+<app-footer></app-footer>
+

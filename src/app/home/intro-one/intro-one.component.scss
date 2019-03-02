@@ -1,0 +1,58 @@
+$color_bright_turquoise: #18e7d3;
+$color_scooter: #19d0de;
+
+.contacts {
+  text-shadow: 2px 2px 7px rgba(106, 255, 150, 1);
+}
+
+.home {
+  height: 75vh;
+  padding-top: 50px;
+}
+
+.slider {
+  justify-content: center;
+}
+
+.slide-col {
+  position: relative;
+  padding-left: 0 !important;
+}
+
+.image-caption {
+  position: absolute;
+  top: 170px;
+  text-align: center;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 22px;
+  border-radius: 9px;
+  line-height: 40px;
+  left: 50px;
+  width: 350px;
+  height: auto;
+  background-color: #17f2d4d9;
+}
+
+.image {
+  img {
+    border-radius: 20px;
+  }
+}
+
+:host ::ng-deep .owl-item.active .slide-caption__title {
+  animation: 1s 1s bounceInRight both;
+}
+
+.home-circle1,
+.home-circle2,
+.home-circle3 {
+  z-index: 100;
+}
+
+:host .team-carousel {
+  .owl-dots {
+    top: 0 !important;
+    right: 1134px !important;
+  }
+}

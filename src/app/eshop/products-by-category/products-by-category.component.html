@@ -1,0 +1,162 @@
+<app-header></app-header>
+
+<div class="breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-text-center d-align-center">
+        <h2 class="title" i18n="Title"><span>products</span></h2>
+      </div>
+      <div class="col-md-6 col-sm-6 col-text-center">
+        <nav aria-label="breadcrumb" class="blog-bradcrumb">
+          <ol class="breadcrumb bg-transparent mb-0">
+            <li class="breadcrumb-item">
+              <a [routerLink]="'/home/one'">Home</a>
+            </li>
+            <li class="breadcrumb-item active">
+              <a [routerLink]="'/products/all-products'">All products</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xl-3" style="margin-top: 30px">
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+          *ngFor="let item of productCategories"
+          [disabled]="expansionPanelIsDisabled"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <a (click)="loadProducts(item.id)">{{ item.name }}</a>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+
+    <div class="col-xl-9 col-md-9 col-sm-12" style="margin-top: 30px">
+      <!-- search input -->
+      <form class="form-inline md-form form-sm active-cyan active-cyan-2">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input
+          class="form-control form-control-sm ml-3 w-75"
+          type="text"
+          placeholder="Search"
+          aria-label="Search"
+          mdbInputDirective
+          (keyup.enter)="onKey($event)"
+          (keyup)="onKey($event)"
+        />
+        <button
+          type="submit"
+          class="btn btn-custom theme-color"
+          (click)="searchProduct()"
+        >
+          Search
+        </button>
+      </form>
+
+      <div
+        #alert
+        class="alert alert-warning alert-dismissible fade show"
+        role="alert"
+        *ngIf="productsById === null"
+      >
+        <button
+          type="button"
+          class="close"
+          aria-label="Close"
+          (click)="closeAlert()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Sorry</strong>
+        , no items were found by your request.
+      </div>
+      <!-- search input -->
+      <!--<mat-chip-list>-->
+      <!--<mat-chip selected *ngFor="let item of productCategories"><a (click)="loadProducts(item.id)"> {{item.name}}</a></mat-chip>-->
+      <!--</mat-chip-list>-->
+      <div class="row">
+        <div class="col-xl-12">
+          <button mat-button (click)="sortByHigher()" i18n>
+            Sort by Price: highest first
+            <i
+              class="fa fa-arrow-up"
+              aria-hidden="true"
+              style="color: #18e4d4"
+            ></i>
+          </button>
+          <button mat-button (click)="sortByLower()" i18n>
+            Sort by Price: lowest first
+            <i
+              class="fa fa-arrow-down"
+              aria-hidden="true"
+              style="color: #18e4d4"
+            ></i>
+          </button>
+        </div>
+        <div
+          class="col-xl-4 col-sm-12"
+          *ngFor="
+            let product of (productsById
+              | paginate: { itemsPerPage: 12, currentPage: firstPage })
+          "
+          [@itemAnim]
+          style="margin-top: 30px"
+        >
+          <mat-card class="product-card">
+            <img
+              mat-card-image
+              src="http://dekoraceprodomov.cz/uploads/products/prw/{{
+                product.img
+              }}"
+              alt="Photo of a product"
+              height="250px"
+              i18n-title
+              title="the localized title of the image"
+            />
+            <mat-card-content text-align="center">
+              <p>{{ product.cz_name }}</p>
+              <h2>{{ product.price }}Kč</h2>
+            </mat-card-content>
+
+            <mat-card-actions align="center">
+              <!-- <button nz-button nzType="default" [routerLink]="['/oneproduct',product.id]">View product</button> -->
+              <div
+                class="btn btn-custom theme-color"
+                [routerLink]="['/oneproduct', product.id]"
+              >
+                View product
+              </div>
+              <!-- <a
+                     mdbBtn href="#"
+                     role="button"
+                     color="Success"
+                     mdbWavesEffect
+                     [routerLink]="['/oneproduct',product.id]"
+                     i18n="product list-view product button"
+             >View product</a> -->
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row align-items-center justify-content-center">
+  <pagination-controls
+    (pageChange)="firstPage = $event"
+    class="pagination"
+  ></pagination-controls>
+</div>
+
+<app-footer></app-footer>

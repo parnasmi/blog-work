@@ -1,0 +1,74 @@
+@import "vars";
+@import "fonts";
+@import "libs";
+@import "libs/owl.carousel.min";
+@import "libs/owl.theme.default";
+@import "placeholders";
+@import "style-tovo";
+@import "tovo-header";
+@import "intro-carousel";
+@import "intro-content";
+@import "blocks/features";
+@import "blocks/screenshot";
+
+$color-accent: #f7d302;
+$color-text: #777;
+$text: $color-text;
+$accent: $color-accent;
+
+::placeholder {
+	color: #666;
+}
+
+::selection {
+	background-color: $accent;
+	color: #fff;
+}
+
+body {
+	font-size: 16px;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.65;
+	font-family: $bebas;
+	overflow-x: hidden;
+	color: $text;
+	// background-color: #cccccc;
+	input, textarea {
+		border: #666 1px solid;
+		outline: none;
+		&:focus:required:invalid {
+			border-color: red;
+		}
+		&:required:valid {
+			border-color: green;
+		}
+	}
+}
+
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	&.img-width {
+		width: 100%;
+	}
+}
+
+.text-center {
+	text-align: center;
+}
+
+b, strong {
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+@import "media"; // Always at the end

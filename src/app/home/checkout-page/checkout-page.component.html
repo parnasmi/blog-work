@@ -1,0 +1,152 @@
+<app-header></app-header>
+<div class="breadcrumb-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-text-center d-align-center">
+        <h2 class="title">product<span> List</span></h2>
+      </div>
+      <div class="col-md-6 col-sm-6 col-text-center">
+        <nav aria-label="breadcrumb" class="blog-bradcrumb ">
+          <ol class="breadcrumb bg-transparent mb-0">
+            <li class="breadcrumb-item"><a [routerLink]="'/home/one'">Home</a></li>
+            <li class="breadcrumb-item active"><a [routerLink]="'/product-list'">My products</a></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container form">
+  <div class="row">
+    <div class="col-8">
+      <form [formGroup]="checkOutForm" (ngSubmit)="onSubmit()">
+        <h2 class="checkout-title" i18n="checkout-form title">checkout form</h2>
+        <!--Input name-->
+        <div class="row">
+          <!--First column-->
+          <div class="col-md-6">
+            <div class="md-form">
+              <i class="fa fa-user prefix"></i>
+              <input formControlName="firstName"
+                     required mdbInputDirective
+                     type="text"
+                     class="form-control"
+                     id="form1"
+                     name="name"
+
+              >
+              <label for="form1" i18n="form-input firstname">Type your name</label>
+            </div>
+          </div>
+
+          <!--Second column-->
+          <div class="col-md-6">
+            <div class="md-form">
+              <input formControlName="lastName"
+                     required mdbInputDirective
+                     type="text"
+                     class="form-control"
+                     id="form2"
+                     name="surname"
+              >
+              <label for="form2" i18n="form-input lastname">Type your surname</label>
+            </div>
+          </div>
+        </div>
+        <!--Input name-->
+        <!--Home-->
+        <div class="row" formGroupName="address">
+          <div class="col-md-9">
+            <div class="md-form">
+              <i class="fa fa-home prefix"></i>
+              <input formControlName="homeAddress" required mdbInputDirective type="text" class="form-control" id="form3" name="address">
+              <label for="form3" i18n="form-input address">Address</label>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="md-form">
+              <input formControlName="homeNumber" required mdbInputDirective type="text" class="form-control" id="form4" name="home-number">
+              <label for="form4" i18n="form-input home number">Home number</label>
+            </div>
+          </div>
+
+
+          <!--First column-->
+          <div class="col-md-9">
+            <div class="md-form">
+              <i class="fa fa-map-marker prefix"></i>
+              <input formControlName="city" required mdbInputDirective type="text" class="form-control form-control-sm" id="form5" name="name">
+              <label for="form5" i18n="form-input city">City</label>
+            </div>
+          </div>
+
+          <!--Second column-->
+          <div class="col-md-3">
+            <div class="md-form">
+              <input formControlName="postcode" required mdbInputDirective type="number" class="form-control form-control-sm" id="form6" name="postcode">
+              <label for="form6" i18n="form-input postcode">Postcode</label>
+            </div>
+          </div>
+        </div>
+        <!--Home-->
+        <!--Index & City-->
+        <!--Email & Password -->
+        <div class="row">
+          <!--First column-->
+          <div class="col-md-6">
+            <div class="md-form">
+              <i class="fa fa-envelope prefix"></i>
+              <input formControlName="email" required mdbInputDirective type="email" class="form-control" id="form9" name="email">
+              <label for="form9" i18n="form-input email">Type your e-mail</label>
+            </div>
+          </div>
+
+          <!--Second column-->
+          <div class="col-md-6">
+            <div class="md-form">
+              <i class="fa fa-lock prefix"></i>
+              <input formControlName="password" required mdbInputDirective type="password" class="form-control" id="form10" name="password">
+              <label for="form10" i18n="form-input password">Type your password</label>
+            </div>
+          </div>
+        </div>
+        <!--Email & Password -->
+        <div class="row">
+          <!--First column-->
+          <div class="col-md-12">
+
+            <div class="md-form">
+              <textarea mdbInputDirective type="text" id="form11" class="md-textarea form-control" rows="2"></textarea>
+              <label for="form11" i18n="form-input comment">Comment</label>
+            </div>
+
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-12">
+            <button mdbBtn
+                    [disabled]="!checkOutForm.valid"
+                    type="submit"
+                    color="success"
+                    outline="true"
+                    size="lg" mdbWavesEffect
+                    i18n="submit form button"
+            >proceed to checkout</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+    <div class="col-4">
+        <h2>Your cart <mdb-badge color="red">{{cartProducts.length}}</mdb-badge></h2>
+        <ul class="list-group">
+          <li class="list-group-item" i18n="list-product name" *ngFor="let product of cartProducts">{{ product.name}}</li>
+          <li class="list-group-item total-price" i18n="list-price"><b>Total price: {{ totalValue }}Kč</b></li>
+        </ul>
+    </div>
+  </div>
+</div>
+<ng2-toasty></ng2-toasty>
+<app-footer></app-footer>
