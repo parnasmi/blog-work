@@ -2085,15 +2085,23 @@ ul {
 }
 
 .contact {
-  background-image: $url_14;
+  // background-image: $url_14;
+  background-image: url("/assets/images/bl-bg-contacts.png");
   position: relative;
   background-repeat: no-repeat;
-  background-size: cover;
+	// background-size: cover;
+	background-size: contain;
   overflow: hidden;
   .contact-us {
     height: 100%;
     display: flex;
-    align-items: center;
+		align-items: center;
+		
+		h2 {
+			font-size: 46px;
+			font-weight: bold;
+			text-align: center;
+		}
   }
 }
 

@@ -61,7 +61,8 @@ import { ProductListComponent } from './home/product-list/product-list.component
 import { EshopModule } from './eshop/eshop.module';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
-import { ContactUsComponent } from './home/contact-us/contact-us.component';
+import { HomeModule } from './home/home.module';
+// import { ContactUsComponent } from './home/contact-us/contact-us.component';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {
@@ -80,7 +81,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     SingleServicePageComponent,
     ModalWindowComponent,
     ServicesPageComponent,
-    ContactUsComponent
+    // ContactUsComponent
   ],
   imports: [
     BrowserModule,
@@ -116,7 +117,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ToastyModule.forRoot(),
     EshopModule,
     NgxGalleryModule,
-    NgZorroAntdModule,
+		NgZorroAntdModule,
+		HomeModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

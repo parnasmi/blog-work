@@ -35,14 +35,14 @@
 	border-radius: 50px;
 	// border: 5px solid #ffe900;
 	position: relative;
-	padding-right: 50px;
+	// padding-right: 50px;
 	$border: 5px;
 	background-clip: padding-box; /* !importanté */
 	border: solid $border transparent; /* !importanté */
 	position: relative;
 	background-color: #fff;
-	padding-top: 3px;
-	padding-left: 15px;
+	// padding-top: 3px;
+	// padding-left: 15px;
 	&::before {
 			content: '';
 			position: absolute;
@@ -51,6 +51,22 @@
 			margin: -$border; /* !importanté */
 			border-radius: inherit; /* !importanté */
 			background: linear-gradient(to bottom, #ffc700 0%,#ffe900 100%);
+	}
+	
+	&::after {
+		content: '';
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		// background: linear-gradient(to bottom, #ffc700 0%,#ffe900 100%);
+		background-color: #ffc700;
+		background-image: url("/assets/images/bl-arrow-down.png");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 20px 30px;
+		position: absolute;
+			right: 0;
+			top: 0;
 	}
 	
 	@include respond(phone) {
@@ -64,6 +80,51 @@
 	@include respond(tabdesk) {
 		width: 258px;
 	}
+}
+
+.hashtags__top-filter select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	outline: none;
+	width: 100%;
+	height: 100%;
+	// padding: 0 20px;
+
+	background: none;
+	border-radius: 50px;
+	border: none;
+	// border: 1px solid #ccc;
+
+	// font-size: 14px;
+	// color: #000;
+	padding: 0 20px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 37px;
+	font-weight: 200;
+	color: #777;
+	
+	position: relative;
+		top: -3px;
+}
+
+.hashtags__top-filter select option {
+	font-size: 14px;
+	color: $text;
+}
+
+/* Убираем стандартные стрелочки в IE */
+.form__select select::-ms-expand {
+    display: none;
+}
+
+.form__select select:focus {
+    outline: 0;
+    // border-color: #2cb0d8;
+}
+
+.form__select select:hover {
+    cursor: pointer;
 }
 
 .hashtags__top-text {

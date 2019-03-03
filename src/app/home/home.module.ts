@@ -82,7 +82,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     TestimonialComponent,
     ListComponent,
 		NewsletterComponent,
-		// ContactUsComponent
+		ContactUsComponent
   ],
   providers: [AboutService, ScreenshotService, PriceService]
 })
