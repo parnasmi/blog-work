@@ -62,10 +62,20 @@ import { EshopModule } from './eshop/eshop.module';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { ContactUsComponent } from './home/contact-us/contact-us.component';
+import { HomeModule } from "./home/home.module";
+import { LanguageService } from "./shared/services/language.services";
+import { SwiperModule } from 'ngx-swiper-wrapper';
+import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 'auto'
+};
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, 'http://onlinekurzyaskoleni.cz/', '/json/static');
 }
 
 @NgModule({
@@ -79,8 +89,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     CheckoutPageComponent,
     SingleServicePageComponent,
     ModalWindowComponent,
-    ServicesPageComponent,
-    ContactUsComponent
+    ServicesPageComponent
   ],
   imports: [
     BrowserModule,
@@ -92,6 +101,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     //    RouterModule.forRoot(rootRouterConfig, { useHash: false, anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled' }),
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
     HttpClientModule,
+    HomeModule,
     NgxPaginationModule,
     MatCardModule,
     NgbModule,
@@ -123,7 +133,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    SwiperModule
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig },
@@ -131,13 +142,18 @@ export function HttpLoaderFactory(http: HttpClient) {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
     },
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    },
     OneproductService,
     AddProductService,
     GetSettingsService,
     GetServiceService,
     NgbActiveModal,
     ModalWindowComponent,
-    GetMenuService
+    GetMenuService,
+    LanguageService
   ],
   bootstrap: [AppComponent],
   entryComponents: [AddToCartComponent],

@@ -25,16 +25,16 @@ export class IntroOneComponent implements OnInit, OnDestroy {
   sub1: Subscription;
   sub2: Subscription;
   settingName: SettingsInterface;
-	public sliderArr: ISliderArr[];
-	
-	sliderPics: ISliderArr[] = [
-		{ "short_text": "lorem1", "img": "pic-banner-1.png" },
-		{ "short_text": "lorem2", "img": "pic-banner-2.png" },
-		{ "short_text": "lorem3", "img": "pic-banner-3.png" },
-		{ "short_text": "lorem4", "img": "pic-banner-4.png" },
-		{ "short_text": "lorem5", "img": "pic-banner-5.png" }
-	];
-	
+  public sliderArr: ISliderArr[];
+
+  sliderPics: ISliderArr[] = [
+    {"short_text": "lorem1", "img": "pic-banner-1.png"},
+    {"short_text": "lorem2", "img": "pic-banner-2.png"},
+    {"short_text": "lorem3", "img": "pic-banner-3.png"},
+    {"short_text": "lorem4", "img": "pic-banner-4.png"},
+    {"short_text": "lorem5", "img": "pic-banner-5.png"}
+  ];
+
   // carousel
   public teamCarousel: any = {
     loop: true,
@@ -54,7 +54,9 @@ export class IntroOneComponent implements OnInit, OnDestroy {
     ]
   };
 
-  constructor(private getSettings: GetSettingsService) {}
+  constructor(private getSettings: GetSettingsService) {
+  }
+
   // this._sanitizer.bypassSecurityTrustHtml('...some hmtl ...')
   ngOnInit() {
     this.getSetting();

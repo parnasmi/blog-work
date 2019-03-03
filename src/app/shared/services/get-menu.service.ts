@@ -1,13 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
+import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
+
+export interface IMenu {
+  page: string;
+  name: string;
+  controller: string;
+}
 
 @Injectable()
 export class GetMenuService {
 
   public results: Object;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   // getMenuFromDB () {
   //   let promise = new Promise((resolve, reject) => {
@@ -33,16 +42,15 @@ export class GetMenuService {
   // http://onlinekurzyaskoleni.cz/cz/json/rootmenu/
   // http://onlinekurzyaskoleni.cz/cz/json/menu/582
 
-  getRootMenuFromDB () {
-    const _url = 'http://onlinekurzyaskoleni.cz/cz/json/rootmenu/';
-    return this.http.get(_url);
+  getRootMenuFromDB(lang: string): Observable<any> {
+    const _url = `http://onlinekurzyaskoleni.cz/${lang}/json/rootmenu/`;
+    return this.http.get<IMenu>(_url).pipe(map(el => el.page));
   }
 
-  getChildMenuFromDB () {
+  getChildMenuFromDB() {
     const _url = 'http://onlinekurzyaskoleni.cz/cz/json/childsmenu/582';
     return this.http.get(_url);
   }
-
 
 
 //   getMenuFromDB () {

@@ -1,153 +1,165 @@
 <!-- Screenshot Section SStart -->
 
 <section id="screenshot" class="screenshot padding-top-bottom">
-  <div class="screenshot-decor">
-    <div class="screenshot-circle1">
-      <img
-        src="assets/images/feature-circle-two.png"
-        alt="feature-circle-two"
-      />
-    </div>
-    <div class="screenshot-circle2">
-      <img src="assets/images/feature-circle.png" alt="feature-circle" />
-    </div>
-    <div class="screenshot-circle3">
-      <img src="assets/images/main-banner1.png" alt="feature-circle-three" />
-    </div>
-  </div>
-
-  <div class="container">
-		<div class="screenshot__pics">
-			<div class="screenshot__pic screenshot__pic_1">
-				<img src="assets/images/bl-pic-left-1.png" alt="">
-			</div>
-			<div class="screenshot__pic screenshot__pic_2">
-				<img src="assets/images/bl-pic-left-2.png" alt="">
-			</div>
-			<div class="screenshot__pic screenshot__pic_3">
-				<img src="assets/images/bl-pic-right-1.png" alt="">
-			</div>
-			<div class="screenshot__pic screenshot__pic_4">
-				<img src="assets/images/bl-pic-right-2.png" alt="">
-			</div>
-			<div class="screenshot__pic screenshot__pic_5">
-				<img src="assets/images/bl-pic-right-3.png" alt="">
-			</div>
-		</div>
-    <div class="row"><div class="col-sm-12">
-					<div class="hashtags">
-						<div class="hashtags__inner">
-							<div class="hashtags-top">
-								<div class="hashtags__top-filter">
-									<div class="hashtags__top-text">Страна</div>
-									<div class="hashtags__top-icon">
-										<img src="assets/images/bl-arrow-down.png" alt="">
-									</div>
-								</div>
-								<div class="hashtags__top-filter">
-									<div class="hashtags__top-text">тематика</div>
-									<div class="hashtags__top-icon">
-										<img src="assets/images/bl-arrow-down.png" alt="">
-									</div>
-								</div>
-							</div>
-							<div class="hashtags__bottom">
-								<div class="hashtags__top-filter hashtags__top-filter_search">
-									<div class="hashtags__top-text">#хештег</div>
-									<div class="hashtags__top-icon">
-										<img src="assets/images/bl-arrow-down.png" alt="">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-      <div class="col-sm-12 chips">
-        <h3>Search by #hashtag</h3>
-        <!-- <mat-chip-list>
-          <mat-chip
-            color="primary"
-            selected
-            *ngFor="let item of (htags | async)"
-          >
-            {{ item.hashtag }}
-          </mat-chip>
-        </mat-chip-list> -->
-        <!-- <mat-form-field class="example-chip-list">
-          <mat-chip-list #chipList>
-            <mat-chip
-              *ngFor="let i of hashtags"
-              [selectable]="selectable"
-              [removable]="removable"
-              (removed)="remove(i)"
-            >
-              {{ i }}
-              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-            </mat-chip>
-            <input
-              placeholder="New hashtag..."
-              #fruitInput
-              [formControl]="hashCtrl"
-              [matAutocomplete]="auto"
-              [matChipInputFor]="chipList"
-              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-              [matChipInputAddOnBlur]="addOnBlur"
-              (matChipInputTokenEnd)="add($event)"
+    <div class="screenshot-decor">
+        <div class="screenshot-circle1">
+            <img
+                    src="assets/images/feature-circle-two.png"
+                    alt="feature-circle-two"
             />
-          </mat-chip-list>
-          <mat-autocomplete
-            #auto="matAutocomplete"
-            (optionSelected)="selected($event)"
-          >
-            <mat-option
-              *ngFor="let i of (filteredHashtags | async)"
-              [value]="i"
-            >
-              {{ i.hashtag }}
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-        <button class="btn btn-custom theme-color" (click)="sendHtagId()">
-          Search
-        </button> -->
-      </div>
-
-      <div class="col-sm-12 ">
-        <div class="screenshot-contain1">
-          <img
-            class="mobile-light-left"
-            src="assets/images/light.png"
-            alt="light"
-          />
-          <img
-            class="mob-mocup img-fluid"
-            src="assets/images/screenshot-mob.png"
-            alt="screenshot-mob"
-          />
-          <img
-            class="mobile-light-right"
-            src="assets/images/light-right.png"
-            alt="light-right"
-          />
-          <!-- If images array is dynamically changing pass this array to [items] input -->
-          <owl-carousel
-            [options]="carouselOptions"
-            [items]="carouselImages"
-            [carouselClasses]="['screenshot-carousel owl-theme']"
-          >
-            <div *ngFor="let screenshot of carouselImages">
-              <div class="screenshot-item">
-                <img [src]="screenshot.img" alt="app" />
-              </div>
-            </div>
-					</owl-carousel>
-					<div class="hashtags__price">
-						<div class="hashtags__price-title">купить место</div>
-						<div class="hashtags__price-sum">от 333 грн</div>
-					</div>
         </div>
-      </div>
+        <div class="screenshot-circle2">
+            <img src="assets/images/feature-circle.png" alt="feature-circle"/>
+        </div>
+        <div class="screenshot-circle3">
+            <img src="assets/images/main-banner1.png" alt="feature-circle-three"/>
+        </div>
     </div>
-  </div>
+
+    <div class="container">
+        <div class="screenshot__pics">
+            <div class="screenshot__pic screenshot__pic_1">
+                <img src="assets/images/bl-pic-left-1.png" alt="">
+            </div>
+            <div class="screenshot__pic screenshot__pic_2">
+                <img src="assets/images/bl-pic-left-2.png" alt="">
+            </div>
+            <div class="screenshot__pic screenshot__pic_3">
+                <img src="assets/images/bl-pic-right-1.png" alt="">
+            </div>
+            <div class="screenshot__pic screenshot__pic_4">
+                <img src="assets/images/bl-pic-right-2.png" alt="">
+            </div>
+            <div class="screenshot__pic screenshot__pic_5">
+                <img src="assets/images/bl-pic-right-3.png" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="hashtags">
+                    <div class="hashtags__inner">
+                        <div class="hashtags-top">
+                            <div class="hashtags__top-filter">
+
+                                <mat-form-field>
+                                    <mat-select placeholder="Country">
+                                        <mat-option
+                                                *ngFor="let i of (filteredHashtags | async)"
+                                                [value]="i"
+                                        >
+                                            {{ i.hashtag }}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+                                <div class="hashtags__top-icon">
+                                    <img src="assets/images/bl-arrow-down.png" alt="">
+                                </div>
+                            </div>
+                            <div class="hashtags__top-filter">
+                                <div class="hashtags__top-text">тематика</div>
+                                <div class="hashtags__top-icon">
+                                    <img src="assets/images/bl-arrow-down.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hashtags__bottom">
+                            <div class="hashtags__top-filter hashtags__top-filter_search">
+                                <div class="hashtags__top-text">#хештег</div>
+                                <div class="hashtags__top-icon">
+                                    <img src="assets/images/bl-arrow-down.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 chips">
+                <h3>Search by #hashtag</h3>
+                <!-- <mat-chip-list>
+                  <mat-chip
+                    color="primary"
+                    selected
+                    *ngFor="let item of (htags | async)"
+                  >
+                    {{ item.hashtag }}
+                  </mat-chip>
+                </mat-chip-list> -->
+                <!-- <mat-form-field class="example-chip-list">
+                  <mat-chip-list #chipList>
+                    <mat-chip
+                      *ngFor="let i of hashtags"
+                      [selectable]="selectable"
+                      [removable]="removable"
+                      (removed)="remove(i)"
+                    >
+                      {{ i }}
+                      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                    </mat-chip>
+                    <input
+                      placeholder="New hashtag..."
+                      #fruitInput
+                      [formControl]="hashCtrl"
+                      [matAutocomplete]="auto"
+                      [matChipInputFor]="chipList"
+                      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                      [matChipInputAddOnBlur]="addOnBlur"
+                      (matChipInputTokenEnd)="add($event)"
+                    />
+                  </mat-chip-list>
+                  <mat-autocomplete
+                    #auto="matAutocomplete"
+                    (optionSelected)="selected($event)"
+                  >
+                    <mat-option
+                      *ngFor="let i of (filteredHashtags | async)"
+                      [value]="i"
+                    >
+                      {{ i.hashtag }}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+                <button class="btn btn-custom theme-color" (click)="sendHtagId()">
+                  Search
+                </button> -->
+            </div>
+
+            <div class="col-sm-12 ">
+                <div class="screenshot-contain1">
+                    <img
+                            class="mobile-light-left"
+                            src="assets/images/light.png"
+                            alt="light"
+                    />
+                    <img
+                            class="mob-mocup img-fluid"
+                            src="assets/images/screenshot-mob.png"
+                            alt="screenshot-mob"
+                    />
+                    <img
+                            class="mobile-light-right"
+                            src="assets/images/light-right.png"
+                            alt="light-right"
+                    />
+                    <!-- If images array is dynamically changing pass this array to [items] input -->
+                    <owl-carousel
+                            [options]="carouselOptions"
+                            [items]="carouselImages"
+                            [carouselClasses]="['screenshot-carousel owl-theme']"
+                    >
+                        <div *ngFor="let screenshot of carouselImages">
+                            <div class="screenshot-item">
+                                <img [src]="screenshot.img" alt="app"/>
+                            </div>
+                        </div>
+                    </owl-carousel>
+                    <div class="hashtags__price">
+                        <div class="hashtags__price-title">купить место</div>
+                        <div class="hashtags__price-sum">от 333 грн</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- Screenshot Section End -->

@@ -1,5 +1,5 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-@import 'assets/scss/service';
+@import '/assets/scss/service';
 
 
 $bebas: bebas_neue;
@@ -99,12 +99,12 @@ body {
   }
 }
 
-@import 'assets/scss/blocks/tovo-header';
-@import 'assets/scss/blocks/intro-carousel';
-@import 'assets/scss/blocks/intro-content';
-@import 'assets/scss/blocks/about';
-@import 'assets/scss/blocks/features';
-@import 'assets/scss/blocks/team';
-@import 'assets/scss/blocks/screenshot';
-@import 'assets/scss/blocks/hashtags';
-@import 'assets/scss/blocks/theme';
+@import '/assets/scss/blocks/tovo-header';
+@import '/assets/scss/blocks/intro-carousel';
+@import '/assets/scss/blocks/intro-content';
+@import '/assets/scss/blocks/about';
+@import '/assets/scss/blocks/features';
+@import '/assets/scss/blocks/team';
+@import '/assets/scss/blocks/screenshot';
+@import '/assets/scss/blocks/hashtags';
+@import '/assets/scss/blocks/theme';

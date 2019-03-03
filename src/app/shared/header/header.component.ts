@@ -3,22 +3,20 @@ import {
   HostListener,
   Inject,
   OnInit,
-  ViewChild,
-  ElementRef,
-  Renderer,
   AfterViewInit
 } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from "@angular/router";
+
 import { WINDOW } from '../services/windows.service';
-import { GetMenuService } from '../services/get-menu.service';
+import { GetMenuService, IMenu } from '../services/get-menu.service';
 import { TranslateService } from '@ngx-translate/core';
-// import * as $ from "jquery";
+import { LanguageService } from "../services/language.services";
+import 'src/assets/js/flexmenu';
+
 declare var $: any;
 
-// export interface JQuery {
-// 	priorityNav (options ?: any): any;
-// }
 
 @Component({
   selector: 'app-header',
@@ -27,14 +25,13 @@ declare var $: any;
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
   public darkHeader = false;
-  public menuItems: any[];
-  rootMenuFromDB: any;
+  rootMenuFromDB: IMenu;
   rootMenuLoaded = false;
   childrenMenuFromDB: any;
   childrenMenuLoaded = false;
-
   testPath;
-	priorityNav: any;
+  private language: any;
+
   // Inject Document object
 
   constructor(
@@ -42,50 +39,33 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     @Inject(WINDOW) private window,
     private getMenuService: GetMenuService,
     private http: HttpClient,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private activatedRoute: ActivatedRoute,
+    private languageService: LanguageService,
   ) {
     translate.setDefaultLang('cz');
+    this.activatedRoute.params.subscribe(lang => {
+      this.languageService.homeLangParam(lang);
+    });
+    this.languageService.home.subscribe(res => {
+      this.translate.use(res.language);
+      this.language = res.language;
+      this.getRootMenuFromDB(res.language);
+    });
   }
 
   ngOnInit() {
     $.getScript('./assets/js/script.js');
     $.getScript('./assets/js/tilt.jquery.js');
-    this.getRootMenuFromDB();
-		this.getChildsMenuFromDB();
-		
-		$( document ).ready(function() {
-			// $('.navbar-nav').flexMenu();
-		});
+    this.getChildsMenuFromDB();
   }
 
-  //  getMenuFromService() {
-  //   this.getMenuService.getMenuFromDB()
-  //   .then((result) => {
-  //       this.menuFromDB = result;
-  //     })
-  //     .catch((error) => console.error(error));
-  //    console.log('results', this.menuFromDB);
-  //  }
-
-  //  getMenuFromDB () {
-  //    this.getMenuService.getMenuFromDB()
-  //    .then((data: any) => {
-  //     this.menuFromDB = data;
-  //     console.log('promise data', this.menuFromDB);
-  //   })
-  //   .catch((error) => console.error(error));
-  // }
-
   // **get data with observables**
-  getRootMenuFromDB() {
-    this.getMenuService.getRootMenuFromDB().subscribe(data => {
+  getRootMenuFromDB(lang: string) {
+    this.getMenuService.getRootMenuFromDB(lang).subscribe(data => {
+      console.log(data);
       this.rootMenuFromDB = data;
-      console.log('this.rootMenuFromDB', this.rootMenuFromDB);
-
       this.rootMenuLoaded = true;
-      console.log(
-        (this.testPath = '/' + this.rootMenuFromDB.page[3].controller)
-      );
     });
   }
 
@@ -99,8 +79,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   // @HostListener Decorator
-	@HostListener('window:scroll', [])
-	
+  @HostListener('window:scroll', [])
+
   onWindowScroll() {
     const number =
       this.window.pageYOffset ||
@@ -116,14 +96,16 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   useLanguage(language: string) {
     this.translate.use(language);
-	}
-	
-	ngAfterViewInit() {
-		$(function() {
-			$('.main-header__list').flexMenu({
-				linkText: 'Еще..'
-			});
-		});
+    this.getRootMenuFromDB(language);
+  }
 
-	}
+  ngAfterViewInit() {
+    $(window).load(function() {
+      $('.main-header__list').flexMenu({
+        linkText: 'Еще..'
+      });
+    });
+
+  }
 }
+

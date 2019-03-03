@@ -34,6 +34,9 @@ import { HomeOneComponent } from './versions/home-one/home-one.component';
 import { HomeThreeComponent } from './versions/home-three/home-three.component';
 import { HomeTwoComponent } from './versions/home-two/home-two.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { TranslateModule } from "@ngx-translate/core";
+import { SwiperModule } from 'ngx-swiper-wrapper';
+import { MatInputModule } from '@angular/material';
 
 
 
@@ -64,7 +67,10 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     MatAutocompleteModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatSliderModule
+    MatInputModule,
+    MatSliderModule,
+    TranslateModule,
+    SwiperModule
   ],
   declarations: [
     HomeOneComponent,
@@ -82,7 +88,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     TestimonialComponent,
     ListComponent,
 		NewsletterComponent,
-		// ContactUsComponent
+		ContactUsComponent
   ],
   providers: [AboutService, ScreenshotService, PriceService]
 })

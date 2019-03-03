@@ -12,7 +12,7 @@ import { ContactUsComponent } from './home/contact-us/contact-us.component';
 export const rootRouterConfig: Routes = [
   {
     path: '',
-    redirectTo: 'home-one',
+    redirectTo: ':language/home',
     pathMatch: 'full'
   },
   {
@@ -37,7 +37,7 @@ export const rootRouterConfig: Routes = [
   },
 
   {
-    path: 'home',
+    path: ':language/home',
     loadChildren: './home/home.module#HomeModule'
   },
   {
@@ -63,6 +63,6 @@ export const rootRouterConfig: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'home/one'
+    redirectTo: ':language/home'
   }
 ];

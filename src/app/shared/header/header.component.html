@@ -1,45 +1,39 @@
-
 <div class="main-header">
 
-	<div class="container">
-		<div class="main-header__inner">
-			<a href="#" class="main-header__logo">
-				<img src="assets/images/logo.png" alt="">
-			</a>
-			<div class="main-header__menu">
-				<div class="main-header__nav">
-					<ul class="main-header__list">
-						<li class="main-header__item"><a href="#" class="main-header__link">Главная</a></li>
-						<li class="main-header__item"><a href="#" class="main-header__link">О Нас</a></li>
-						<li class="main-header__item"><a href="#" class="main-header__link">Услуги</a></li>
-						<li class="main-header__item"><a href="#" class="main-header__link">Команда</a></li>
-						<li class="main-header__item"><a href="#" class="main-header__link">Blog</a></li>
-						<li class="main-header__item"><a href="#" class="main-header__link">Цены</a></li>
-						<li class="main-header__item"><a href="#" class="main-header__link">Контакты</a></li>
-						<li class="main-header__item"><a href="#" class="main-header__link">Контакты</a></li>
-						<li class="main-header__item"><a href="#" class="main-header__link">Контакты</a></li>
-						<li class="main-header__item"><a href="#" class="main-header__link">Контакты</a></li>
-					</ul>
-				</div>
-				
-				<div class="lang-box">
-					<div class="lang-box__header">
-						<div class="lang-box__text">русский</div>
-						<div class="lang-box__icon">
-							<img src="assets/images/icon-ru.png" alt="">
-						</div>
-					</div>
-					<div class="lang-box__dropdown">
-						<div class="lang-box__dropdown-list">
-							<div class="lang-box__dropdown-item">english</div>
-							<div class="lang-box__dropdown-item">uzbek</div>
-							<div class="lang-box__dropdown-item">turkish</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="main-header__inner">
+            <a href="#" class="main-header__logo">
+                <img src="assets/images/logo.png" alt="">
+            </a>
+            <div class="main-header__menu">
+                <div class="main-header__nav">
+                    <ul class="main-header__list">
+                        <li class="main-header__item">
+                            <a routerLink="{{menu.controller}}" [routerLinkActive]="" class="main-header__link"
+                               *ngFor="let menu of rootMenuFromDB">{{menu.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lang-box">
+                    <div class="lang-box__header">
+                        <div class="lang-box__text">русский</div>
+                        <div class="lang-box__icon">
+                            <img src="assets/images/icon-ru.png" alt="">
+                        </div>
+                    </div>
+                    <div class="lang-box__dropdown">
+                        <div class="lang-box__dropdown-list">
+                            <div class="lang-box__dropdown-item" (click)="useLanguage('en')">english</div>
+                            <div class="lang-box__dropdown-item" (click)="useLanguage('cz')">cz</div>
+                            <div class="lang-box__dropdown-item" (click)="useLanguage('ru')">ru</div>
+                            <div class="lang-box__dropdown-item">{{'navigation' | translate}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 <!-- Nav Start -->

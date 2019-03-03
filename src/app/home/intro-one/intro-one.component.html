@@ -30,47 +30,63 @@
 <!-- Home Section start-->
 
 <section id="home" class="home">
-	<div class="home-decor">
-			<div class="home-circle1">
-					<img src="assets/images/main-banner3.png" alt="" />
-			</div>
-			<div class="home-circle2">
-					<img src="assets/images/main-banner12.png" alt="" />
-			</div>
-			<div class="home-circle3">
-					<img src="assets/images/main-banner1.png" alt="" />
-			</div>
-	</div>
-	<div class="container-fluid">
-			<div class="row slider">
-					<owl-carousel
-							#owlElement
-							[items]="sliderArr"
-							[options]="teamCarousel"
-							[carouselClasses]="['team-carousel owl-theme intro-carousel']"
-					>
-						<div *ngFor="let item of sliderPics; let i = index" class="intro-carousel__item intro-carousel__item_{{ i+1 }}">
-							<div class="intro-carousel__content">
-								<div class="intro-content">
-									<div class="intro-content__text">
-										У вас есть <strong>свой бизнес</strong> и вы хотите недорогое
-										<strong>объявление</strong> от местных знаменитостей?
-									</div>
-									<a href="#" class="intro-content__btn">Да мне интересно</a>
-								</div>
-							</div>
-							<div class="intro-carousel__image">
-								<img src="assets/images/{{item.img}}" alt="">
-							</div>
-						</div>
-						
-					</owl-carousel>
-			</div>
-	</div>
+    <div class="home-decor">
+        <div class="home-circle1">
+            <img src="../../assets/images/main-banner3.png" alt=""/>
+        </div>
+        <div class="home-circle2">
+            <img src="../../assets/images/main-banner12.png" alt=""/>
+        </div>
+        <div class="home-circle3">
+            <img src="../../assets/images/main-banner1.png" alt=""/>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row slider">
+            <!--<owl-carousel-->
+                <!--#owlElement-->
+                <!--[items]="sliderPics"-->
+                <!--[options]="teamCarousel"-->
+                <!--[carouselClasses]="['team-carousel owl-theme intro-carousel']"-->
+            <!--&gt;-->
+                <!--<div *ngFor="let item of sliderPics; let i = index"-->
+                     <!--class="intro-carousel__item intro-carousel__item_{{ i+1 }}">-->
+                    <!--<div class="intro-carousel__content">-->
+                        <!--<div class="intro-content">-->
+                            <!--<div class="intro-content__text">-->
+                                <!--У вас есть <strong>свой бизнес</strong> и вы хотите недорогое-->
+                                <!--<strong>объявление</strong> от местных знаменитостей?-->
+                            <!--</div>-->
+                            <!--<a href="#" class="intro-content__btn">Да мне интересно</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="intro-carousel__image">-->
+                        <!--<img src="../../assets/images/{{item.img}}" alt="">-->
+                    <!--</div>-->
+                <!--</div>-->
+
+            <!--</owl-carousel>-->
+            <swiper>
+                <div *ngFor="let item of sliderPics; let i = index"
+                     class="intro-carousel__item intro-carousel__item_{{ i+1 }}">
+                    <div class="intro-carousel__content">
+                        <div class="intro-content">
+                            <div class="intro-content__text">
+                                У вас есть <strong>свой бизнес</strong> и вы хотите недорогое
+                                <strong>объявление</strong> от местных знаменитостей?
+                            </div>
+                            <a href="#" class="intro-content__btn">Да мне интересно</a>
+                        </div>
+                    </div>
+                    <div class="intro-carousel__image">
+                        <img src="../../assets/images/{{item.img}}" alt="">
+                    </div>
+                </div>
+            </swiper>
+        </div>
+    </div>
 </section>
 <!--Home Se ction End -->
-
-
 
 
 <!-- <div class="container-fluid">
@@ -78,22 +94,22 @@
 		<div class="col-10 slide-col">
 			<owl-carousel #owlElement [items]="sliderArr" [options]="teamCarousel"
 				[carouselClasses]="['team-carousel owl-theme']"> -->
-				<!-- <div class="image" *ngFor="let item of sliderArr"> -->
-				<!-- <div class="image" *ngFor="let item of sliderPics">
-					<div class="image-caption slide-caption__title">
-						{{ item.short_text }}
-					</div> -->
-					<!-- <img
-												src="http://onlinekurzyaskoleni.cz/uploads/settings/{{
-														item.img
-												}}"
-												alt=""
-										/> -->
-					<!-- <img src="./assets/images/{{
-														item.img
-												}}" alt="" />
-				</div>
-			</owl-carousel>
-		</div>
-	</div>
+<!-- <div class="image" *ngFor="let item of sliderArr"> -->
+<!-- <div class="image" *ngFor="let item of sliderPics">
+    <div class="image-caption slide-caption__title">
+        {{ item.short_text }}
+    </div> -->
+<!-- <img
+                            src="http://onlinekurzyaskoleni.cz/uploads/settings/{{
+                                    item.img
+                            }}"
+                            alt=""
+                    /> -->
+<!-- <img src="./assets/images/{{
+                                    item.img
+                            }}" alt="" />
+</div>
+</owl-carousel>
+</div>
+</div>
 </div> -->

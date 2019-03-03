@@ -4,12 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeOneComponent } from './versions/home-one/home-one.component';
 import { HomeTwoComponent } from './versions/home-two/home-two.component';
 import { HomeThreeComponent } from './versions/home-three/home-three.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
 
 // Routes
 const routes: Routes = [
   {
-    path: 'one',
+    path: '',
+    component: HomeOneComponent
+  },
+  {
+    path: ':language/home',
     component: HomeOneComponent
   },
   {
