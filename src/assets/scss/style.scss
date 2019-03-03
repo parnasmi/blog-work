@@ -2225,10 +2225,18 @@ ul {
 }
 
 .footer-style {
-  padding: 0;
-  margin: 0;
+  // padding: 0;
+	// padding: 20px;
+	// background-color: rgba(#fff, .3);
+	// border: 1px solid #fff;
+	margin: 0;
+	// border-radius: 5px;
   li {
-    position: relative;
+		position: relative;
+		// background-image: linear-gradient(to top, #ffea00 0%, #ffc600 100%);
+		// -webkit-background-clip: text;
+		// -webkit-text-fill-color: transparent;
+		// color: #ffea00;
     & + li {
       margin-top: 50px;
     }
@@ -2765,11 +2773,14 @@ iframe.video-play {
 .footer-address {
   a {
     padding-left: 35px;
-    color: $white !important;
+		color: $white !important;
+		// color: #ffc900;
+		font-size: 18px;
     letter-spacing: 0.03em;
     line-height: 22px;
     margin-bottom: 0;
-    display: block;
+		display: block;
+		text-shadow: 1px 1px 2px #c57c25;
   }
 }
 
