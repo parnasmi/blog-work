@@ -1493,11 +1493,12 @@ ul {
   &.owl-theme .owl-dots .owl-dot {
     span {
       border: 1px solid $white;
-      background: $color_bright_turquoise;
+      // background: $color_bright_turquoise;
+      background: #ffc700;
       background: linear-gradient(
         to bottom,
-        $color_bright_turquoise 0,
-        $color_scooter 100%
+        #ffc700 0,
+        #ffe900 100%
       );
       transition: all 0.3s ease;
     }
@@ -1505,8 +1506,10 @@ ul {
       background: $color_bright_turquoise;
       background: linear-gradient(
         to bottom,
-        $color_bright_turquoise 0,
-        $color_scooter 100%
+        //$color_bright_turquoise 0,
+        //$color_scooter 100%
+        #ffc700 0,
+								#ffe900 100%
       );
       width: 25px;
       transition: all 0.3s ease;
@@ -1782,25 +1785,60 @@ ul {
 }
 
 .price {
-  background-image: $url_10;
+  // background-image: $url_10;
+  background-image: url("/assets/images/bl-bg-price.png");
   position: relative;
-  background-size: cover;
+	// background-size: cover;
+	background-size: contain;
   background-repeat: no-repeat;
   width: 100vw;
   margin-top: 0;
-  align-items: center;
+	align-items: center;
+	
+	.title {
+		font-size: 75px;
+		font-weight: bold;
+		text-align: center;
+		line-height: 1;
+		margin-bottom: 50px;
+		color: #fff;
+	}
+}
+
+.price {
+	.decor-images {
+		position: absolute;
+		top: 100px;
+		width: 100%;
+	}
+	
+	.decor-image {
+		position: absolute;
+		
+	}
+	
+	.decor-image_left {
+		left: 40px;
+	}
+	
+	.decor-image_right {
+		right: 40px;
+	}
 }
 
 .price-block {
   background-color: $white;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 5px 27px 0 $black_5;
+	// box-shadow: 0 5px 27px 0 $black_5;
+	box-shadow: 0px 5px 27px 0px rgba(0, 0, 0, 0.05);
+	
   transition: 0.3s ease;
   &:hover {
     .mrp {
       h2 {
         color: $color_bright_turquoise;
+        color: #ffc700;
         transition: all 0.3s ease;
       }
     }
@@ -1814,18 +1852,29 @@ ul {
 }
 
 .price-type {
-  background-image: $url_11;
+	// background-image: $url_11;
+	background: linear-gradient(to bottom, #ffc700 0%,#ffe900 100%);
+	
   padding: 20px;
-  background-size: cover;
+	background-size: cover;
+	
+	&__inner {
+		background-color: #fff;
+	}
   h2 {
     background-color: $white;
     padding: 10px;
     text-align: center;
-    color: $color_bright_turquoise;
+    // color: $color_bright_turquoise;
     margin-bottom: 0;
     font-weight: 700;
     letter-spacing: 0.1em;
-    font-size: 24px;
+		font-size: 24px;
+		
+		background-image: linear-gradient(to bottom, #ffc700 0%,#ffe900 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		
   }
 }
 
@@ -1838,14 +1887,16 @@ ul {
     line-height: 1;
     margin-top: 30px;
     color: $color_mine_shaft;
-    transition: all 0.3s ease;
+		transition: all 0.3s ease;
+		font-size: 66px;
   }
   h6 {
     &.user-type {
       font-weight: 400;
       color: $color_tundora;
       margin-bottom: 25px;
-      line-height: 1;
+			line-height: 1;
+			font-size: 17px;
     }
   }
 }
@@ -1854,7 +1905,8 @@ ul {
   font-weight: 700;
   margin: 5px;
   margin-bottom: 30px;
-  line-height: 1;
+	line-height: 1;
+	font-size: 17px;
 }
 
 .price-devide {
@@ -1870,7 +1922,8 @@ ul {
   li {
     padding: 10px;
     text-transform: capitalize;
-    color: #777;
+		color: #777;
+		font-size: 14px;
   }
 }
 
@@ -2087,12 +2140,20 @@ ul {
 .footer-text {
   text-align: center;
   h2 {
-    margin: 25px auto;
+		margin: 25px auto;
+		font-size: 47px;
+		font-weight: bold;
+		letter-spacing: 5px;
   }
   p {
     padding-left: 50px;
     padding-right: 50px;
-    margin-bottom: 25px;
+		margin-bottom: 25px;
+		font-size: 21px;
+		font-weight: 100;
+		color: #777777;
+		letter-spacing: 0.6px;
+		line-height: 1.2;
   }
   .footer-form {
     padding: 0;
@@ -2136,11 +2197,12 @@ ul {
 }
 
 .address-bar {
-  background: linear-gradient(
-    to top,
-    $color_scooter 0,
-    $color_bright_turquoise 100%
-  );
+  // background: linear-gradient(
+  //   to top,
+  //   $color_scooter 0,
+  //   $color_bright_turquoise 100%
+	// );
+	background-image: linear-gradient(to top, #ffea00 0%, #ffc600 100%);
   padding-top: 100px;
   padding-bottom: 100px;
   margin: 0;

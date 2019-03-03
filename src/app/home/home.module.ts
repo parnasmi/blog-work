@@ -33,6 +33,7 @@ import { TestimonialComponent } from './testimonial/testimonial.component';
 import { HomeOneComponent } from './versions/home-one/home-one.component';
 import { HomeThreeComponent } from './versions/home-three/home-three.component';
 import { HomeTwoComponent } from './versions/home-two/home-two.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 
@@ -80,7 +81,8 @@ import { HomeTwoComponent } from './versions/home-two/home-two.component';
     PriceComponent,
     TestimonialComponent,
     ListComponent,
-    NewsletterComponent
+		NewsletterComponent,
+		// ContactUsComponent
   ],
   providers: [AboutService, ScreenshotService, PriceService]
 })

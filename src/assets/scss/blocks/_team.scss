@@ -1,0 +1,47 @@
+.team {
+	background-image: url("/assets/images/bl-bg-team.png");
+	margin-top: 30px;
+	.title {
+		font-weight: bold;
+		font-size: 53px;
+		margin-bottom: 50px;
+	}
+	
+	@include respond(tabonly) {
+		background-position: right top;
+	}
+	
+	@include respond(desktop) {
+		background-size: 100% 100%;
+	}
+}
+
+.team-block {
+	background: linear-gradient(to bottom, #ffc700 0%,#ffe900 100%);
+	padding: 50px 40px;
+}
+
+.team-text h3 {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.team-text h6 {
+	font-size: 13px;
+	font-weight: 400;
+	text-align: left;
+}
+
+.team-box {
+	padding: 20px 10px;
+}
+
+.team-carousel .owl-dots {
+	position: absolute !important;
+	right: 0;
+	top: -50px!important;
+	text-align: right;
+	@include respond(phone) {
+		text-align: center;
+	}
+}

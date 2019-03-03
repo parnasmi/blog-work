@@ -1,0 +1,75 @@
+.screenshot {
+	background-image: url("/assets/images/bl-bg-screenshots.png");
+	background-repeat: no-repeat;
+	background-position: center 200px;
+	@include respond(desktop) {
+		min-height: 870px;
+	}
+	padding: 0;
+	padding-bottom: 50px;
+	
+	@include respond(phone) {
+		background-size: 280px 280px;
+	}
+	
+	@include respond(tabdesk) {
+		background-size: 500px 500px;
+		// padding-top: 50px;
+		padding-top: 150px;
+		padding-bottom: 150px;
+	}
+	
+	
+	.container {
+		position: relative;
+	}
+}
+
+.screenshot__pics {
+	@include respond(phone) {
+		display: none;
+	}
+}
+
+.screenshot__pic{
+	position: absolute;
+	width: 240px;
+	height: 240px;
+	z-index: 10;
+	img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+.screenshot__pic_1 {
+	bottom: -140px;
+	left: -40px;
+}
+
+.screenshot__pic_2 {
+	bottom: -140px;
+	right: -40px;
+}
+.screenshot__pic_4 {
+	top: -70px;
+	left: -40px;
+	@include respond(tablet) {
+		display: none;
+	}
+}
+.screenshot__pic_3 {
+	top: -70px;
+	right: -40px;
+	
+	@include respond(tablet) {
+		display: none;
+	}
+}
+.screenshot__pic_5 {
+	// top: -131px;
+	// left: 50%;
+	// // margin-left: -110px;
+	// transform: translateX(-50%);
+	display: none;
+}
