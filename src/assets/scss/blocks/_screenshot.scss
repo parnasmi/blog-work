@@ -6,17 +6,26 @@
 		min-height: 870px;
 	}
 	padding: 0;
-	padding-bottom: 50px;
 	
 	@include respond(phone) {
 		background-size: 280px 280px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	
+	@include respond(tabonly) {
+		padding-bottom: 50px;
+		padding-top: 50px;
 	}
 	
 	@include respond(tabdesk) {
 		background-size: 500px 500px;
-		// padding-top: 50px;
-		padding-top: 150px;
 		padding-bottom: 150px;
+	}
+	
+	@include respond(desktop) {
+		padding-top: 150px;
+	
 	}
 	
 	

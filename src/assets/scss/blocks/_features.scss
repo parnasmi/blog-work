@@ -8,12 +8,26 @@
 	
 	@include respond(phone) {
 		padding-top: 30px;
+		padding-bottom: 30px;
 		background-position: -300px -30px;
 		background-image: none;
+	}
+	
+	@include respond(tabonly) {
+		padding-top: 30px;
 	}
 }
 
 
+.feature-phone {
+	@include respond(phone) {
+		display: none;
+	}
+	
+	@include respond(tabonly) {
+		display: block;
+	}
+}
 
 .feature .feature-phone {
 	position: static;

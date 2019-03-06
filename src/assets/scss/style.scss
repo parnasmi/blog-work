@@ -243,7 +243,13 @@ section {
   position: relative;
   .fp-tableCell {
     display: block;
-  }
+	}
+	
+	@include respond(tablet) {
+		height: auto !important;
+		min-height: 0!important;
+		padding-top: 0px!important;
+	}
 }
 
 .gmap3 {
@@ -1015,7 +1021,11 @@ ul {
   .home-circle1 {
     position: absolute;
     top: 185px;
-    left: 75px;
+		left: 75px;
+		
+		@include respond(tablet) {
+			display: none;
+		}
   }
   .home-circle2 {
     position: absolute;
@@ -1026,7 +1036,11 @@ ul {
     position: absolute;
     top: 280px;
     right: 203px;
-  }
+	}
+	
+	@include respond(tablet) {
+		display: none;
+	}
 }
 
 .home-contain {
@@ -1276,7 +1290,11 @@ ul {
     top: auto;
     left: 35%;
     bottom: 0px;
-  }
+	}
+	
+	@include respond(tablet) {
+		display: none;
+	}
 }
 
 .mob-mocup {
@@ -1794,7 +1812,9 @@ ul {
   width: 100vw;
   margin-top: 0;
 	align-items: center;
-	
+	@include respond(phone) {
+		background-size: 100% auto;
+	}
 	.title {
 		font-size: 75px;
 		font-weight: bold;
@@ -1802,6 +1822,10 @@ ul {
 		line-height: 1;
 		margin-bottom: 50px;
 		color: #fff;
+		
+		@include respond(phone) {
+			font-size: 30px;
+		}
 	}
 }
 
@@ -2085,15 +2109,23 @@ ul {
 }
 
 .contact {
-  background-image: $url_14;
+	// background-image: $url_14;
+	background-image: url("/assets/images/bl-bg-contacts.png");
   position: relative;
   background-repeat: no-repeat;
-  background-size: cover;
+	// background-size: cover;
+	background-size: contain;
   overflow: hidden;
   .contact-us {
     height: 100%;
     display: flex;
-    align-items: center;
+		align-items: center;
+		
+		h2 {
+			font-size: 46px;
+			font-weight: bold;
+			text-align: center;
+		}
   }
 }
 
@@ -2761,7 +2793,13 @@ iframe.video-play {
     letter-spacing: 0.03em;
     line-height: 22px;
     margin-bottom: 0;
-    display: block;
+		display: block;
+		
+		text-shadow: 1px 1px 2px #c57c25;
+		
+		@include respond(tabdesk) {
+			font-size: 18px;
+		}
   }
 }
 

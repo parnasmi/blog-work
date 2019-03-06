@@ -1,6 +1,10 @@
 .about {
 	background: none;
 	
+	@include respond(tablet) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
 	&::before {
 		content: '';
 		position: absolute;
@@ -22,6 +26,10 @@
 		@include respond(phone) {
 			font-size: 30px;
 			margin-bottom: 20px;
+		}
+		
+		@include respond(tabonly) {
+			font-size: 40px;
 		}
 	}
 	

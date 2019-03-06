@@ -1,0 +1,5 @@
+.blog {
+	@include respond(desktop) {
+		padding-top: 50px;
+	}
+}

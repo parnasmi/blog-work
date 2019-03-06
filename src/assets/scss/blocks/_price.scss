@@ -1,0 +1,45 @@
+.price {
+	
+	@include respond(phone) {
+		padding-top: 5px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	
+	@include respond(tablet) {
+		.decor-images {
+			display: none;
+		}
+	}
+	
+	@include respond(tabonly) {
+		background-position: 0 50px;
+		padding-bottom: 0;
+		
+	}
+	
+	.title {
+		@include respond(phone) {
+			margin-bottom: 30px;
+			font-size: 25px;
+		}
+		@include respond(tabonly) {
+			// font-size: 40px;
+			// margin-bottom: 20px;
+		}
+	}
+}
+.price-carousel.owl-theme .owl-dots .owl-dot span,
+.price-carousel.owl-theme .owl-dots .owl-dot.active span {
+	background: linear-gradient(to bottom, #ffc700 0%,#ffe900 100%);
+}
+
+.price-carousel.owl-theme .owl-dots .owl-dot span {
+	
+}
+
+.checkbox.flags + .checkbox {
+	@include respond(phone) {
+		margin-bottom: 30px!important;
+	}
+}

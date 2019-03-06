@@ -1,0 +1,10 @@
+.contact {
+	@include respond(tablet) {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}
+}
+
+.theme-form .form-control {
+    box-shadow: 0 0 5px 0 $accent;
+}
